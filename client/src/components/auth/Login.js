@@ -1,7 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, Fragment } from 'react';
 import AuthContext from '../../context/auth/authContext';
 import AlertContext from '../../context/alert/alertContext';
-
 const Login = (props) => {
 	const alertContext = useContext(AlertContext);
 	const authContext = useContext(AuthContext);
@@ -18,6 +17,7 @@ const Login = (props) => {
 			setAlert(error, 'danger');
 			clearErrors();
 		}
+
 		// eslint-disable-next-line
 	}, [error, isAuthenticated, props.history]);
 
@@ -84,6 +84,7 @@ const Login = (props) => {
 						</label>
 					</div>
 				</div>
+
 				<input
 					type='submit'
 					value='Login'
